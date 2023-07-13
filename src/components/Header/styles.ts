@@ -4,9 +4,9 @@ export const HeaderContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 0;
+  background-color: ${props => props.theme['base-profile']};
 `
 
-export const Logo = styled.img`
+export const HeaderImage = styled.img`
   cursor: pointer;
 `
