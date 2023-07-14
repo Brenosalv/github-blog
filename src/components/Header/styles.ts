@@ -5,8 +5,10 @@ export const HeaderContainer = styled.nav`
   align-items: center;
   justify-content: space-between;
   background-color: ${props => props.theme['base-profile']};
+  height: 18.5rem;
 `
 
-export const HeaderImage = styled.img`
+export const Logo = styled.img`
   cursor: pointer;
+  margin-top: -5.5rem;
 `
