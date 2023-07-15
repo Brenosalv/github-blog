@@ -2,15 +2,15 @@ import arrowUpRightFromSquareSolidIcon from "../../assets/icons/arrow-up-right-f
 import buildingSolidIcon from "../../assets/icons/building-solid.svg";
 import githubIcon from "../../assets/icons/github.svg";
 import userGroupSolidIcon from "../../assets/icons/user-group-solid.svg";
+import { Box } from "../../components/Box";
 import {
   Avatar,
-  Container,
   ProfileInfoContainer
 } from "./styles";
 
 export function ProfileSummary() {
   return (
-    <Container>
+    <Box>
       <Avatar
         src="https://europeanwomen.net/wp-content/uploads/2021/05/dutch2.jpg"
         alt="Profile avatar"
@@ -76,6 +76,6 @@ export function ProfileSummary() {
           </div>
         </footer>
       </ProfileInfoContainer>
-    </Container>
+    </Box>
   )
 }

@@ -11,7 +11,6 @@ export const Container = styled.div`
 
   &:hover {
     border: 1px solid ${props => props.theme["base-label"]};
-    cursor: pointer;
   }
 
   header {
@@ -45,4 +44,10 @@ export const Container = styled.div`
       -webkit-box-orient: vertical;
     }
   }
+`
+
+export const Button = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 `
