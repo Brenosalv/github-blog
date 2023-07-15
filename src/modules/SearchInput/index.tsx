@@ -1,3 +1,4 @@
+import { Input } from "../../components/Input";
 import { Container } from "./styles";
 
 export function SearchInput() {
@@ -14,7 +15,7 @@ export function SearchInput() {
       </header>
 
       <main>
-        <input
+        <Input
           type="text"
           placeholder="Search content"
         />

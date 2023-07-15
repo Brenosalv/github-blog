@@ -1,3 +1,4 @@
+import { PostList } from "../../modules/PostList";
 import { ProfileSummary } from "../../modules/ProfileSummary";
 import { SearchInput } from "../../modules/SearchInput";
 import { Container } from "./styles";
@@ -7,10 +8,7 @@ export function Home() {
     <Container>
       <ProfileSummary />
       <SearchInput />
-
-      {/* <PostListContainer>
-        
-      </PostListContainer> */}
+      <PostList />
     </Container >
   )
 }
