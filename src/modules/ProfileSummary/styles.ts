@@ -8,6 +8,7 @@ export const Avatar = styled.img`
 export const ProfileInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   header {
     display: flex;
@@ -40,7 +41,7 @@ export const ProfileInfoContainer = styled.div`
   }
 
   main {
-    margin: 8px 0 24px 0;
+    margin: 8px 0 24px;
 
     h2 {
       color: ${props => props.theme["base-text"]};

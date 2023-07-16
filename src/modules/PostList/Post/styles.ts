@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  text-align: left;
   gap: 20px;
   background-color: ${props => props.theme["base-post"]};
   padding: 32px;
@@ -16,7 +17,7 @@ export const Container = styled.div`
   header {
     display: flex;
     justify-content: space-between;
-
+    
     h4 {
       color: ${props => props.theme["base-title"]};
       font-size: 1.25rem;

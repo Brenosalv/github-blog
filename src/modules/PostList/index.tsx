@@ -1,15 +1,15 @@
+import { usePosts } from "../../hooks/usePosts";
 import { Post } from "./Post";
 import { Container } from "./styles";
 
 export function PostList() {
+  const posts = usePosts();
+
   return (
     <Container>
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      {posts?.map((post) => (
+        <Post key={post.id} postDetails={post} />
+      ))}
     </Container>
   )
 }

@@ -3,16 +3,19 @@ import buildingSolidIcon from "../../assets/icons/building-solid.svg";
 import githubIcon from "../../assets/icons/github.svg";
 import userGroupSolidIcon from "../../assets/icons/user-group-solid.svg";
 import { Box } from "../../components/Box";
+import { useUser } from "../../hooks/useUser";
 import {
   Avatar,
   ProfileInfoContainer
 } from "./styles";
 
 export function ProfileSummary() {
+  const user = useUser();
+
   return (
     <Box>
       <Avatar
-        src="https://europeanwomen.net/wp-content/uploads/2021/05/dutch2.jpg"
+        src={user?.avatar_url}
         alt="Profile avatar"
         width={148}
         height={148}
@@ -21,7 +24,7 @@ export function ProfileSummary() {
       <ProfileInfoContainer>
         <header>
           <h1>
-            Sofia Vergara
+            {user?.name}
           </h1>
 
           <span>
@@ -40,7 +43,7 @@ export function ProfileSummary() {
 
         <main>
           <h2>
-            Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.
+            {user?.bio}
           </h2>
         </main>
 
@@ -52,7 +55,7 @@ export function ProfileSummary() {
               width={18}
               height={18}
             />
-            <p>camaronwll</p>
+            <p>{user?.login}</p>
           </div>
 
           <div>
@@ -62,7 +65,7 @@ export function ProfileSummary() {
               width={18}
               height={18}
             />
-            <p>Rocketseat</p>
+            <p>{user?.company}</p>
           </div>
 
           <div>
@@ -72,7 +75,7 @@ export function ProfileSummary() {
               width={18}
               height={18}
             />
-            <p>32 followers</p>
+            <p>{user?.followers} followers</p>
           </div>
         </footer>
       </ProfileInfoContainer>
