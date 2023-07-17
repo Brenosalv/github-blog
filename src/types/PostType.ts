@@ -5,7 +5,9 @@ export interface PostType {
   title: string;
   user: User;
   body: string;
+  comments: number;
   created_at: string;
+  html_url: string;
 }
 
 export interface Repository {

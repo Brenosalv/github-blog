@@ -20,24 +20,6 @@ export const ProfileInfoContainer = styled.div`
       font-style: normal;
       font-weight: 700;
     }
-
-    span {
-      height: fit-content;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-
-      font-size: 0.75rem;
-      font-style: normal;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: ${props => props.theme["blue"]};
-
-      &:hover {
-        cursor: pointer;
-        border-bottom: 1px solid ${props => props.theme["blue"]};;
-      }
-    }
   }
 
   main {

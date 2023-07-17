@@ -12,7 +12,9 @@ export function Post({ postDetails }: PostProps) {
   const navigate = useNavigate();
 
   function handlePostClick() {
-    navigate("/post");
+    navigate("/post", {
+      state: postDetails
+    });
   }
 
   return (

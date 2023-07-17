@@ -1,17 +1,29 @@
+import { formatDistanceToNow } from "date-fns";
+import { enUS } from "date-fns/locale";
 import arrowUpRightFromSquareSolidIcon from "../../assets/icons/arrow-up-right-from-square-solid.svg";
 import calendarDaySolidIcon from "../../assets/icons/calendar-day-solid.svg";
 import chevronLeftSolidIcon from "../../assets/icons/chevron-left-solid.svg";
 import commentSolidIcon from "../../assets/icons/comment-solid.svg";
 import githubIcon from "../../assets/icons/github.svg";
 import { Box } from "../../components/Box";
+import { Link } from "../../components/Link";
 import { ContentContainer } from "./styles";
 
-export function PostSummary() {
+interface PostSummaryProps {
+  title: string;
+  posterUsername: string;
+  comments: number;
+  created_at: string;
+  html_url: string;
+}
+
+export function PostSummary({ title, posterUsername, comments, html_url, created_at }: PostSummaryProps) {
+
   return (
     <Box>
       <ContentContainer>
         <header>
-          <span>
+          <Link href="javascript:history.back()">
             <img
               src={chevronLeftSolidIcon}
               alt=""
@@ -19,9 +31,9 @@ export function PostSummary() {
               height={12}
             />
             Back
-          </span>
+          </Link>
 
-          <span>
+          <Link href={html_url} target="_blank">
             See on Github
             <img
               src={arrowUpRightFromSquareSolidIcon}
@@ -29,12 +41,12 @@ export function PostSummary() {
               width={12}
               height={12}
             />
-          </span>
+          </Link>
         </header>
 
         <main>
           <h1>
-            JavaScript data types and data structures
+            {title}
           </h1>
         </main>
 
@@ -46,7 +58,7 @@ export function PostSummary() {
               width={18}
               height={18}
             />
-            <p>camaronwll</p>
+            <p>{posterUsername}</p>
           </span>
 
           <span>
@@ -56,7 +68,10 @@ export function PostSummary() {
               width={18}
               height={18}
             />
-            <p>1 day ago</p>
+            {formatDistanceToNow(new Date(created_at), {
+              addSuffix: true,
+              locale: enUS
+            })}
           </span>
 
           <span>
@@ -66,7 +81,7 @@ export function PostSummary() {
               width={18}
               height={18}
             />
-            <p>5 comments</p>
+            <p>{comments} comments</p>
           </span>
         </footer>
       </ContentContainer>

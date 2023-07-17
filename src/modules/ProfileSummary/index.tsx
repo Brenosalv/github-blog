@@ -3,6 +3,7 @@ import buildingSolidIcon from "../../assets/icons/building-solid.svg";
 import githubIcon from "../../assets/icons/github.svg";
 import userGroupSolidIcon from "../../assets/icons/user-group-solid.svg";
 import { Box } from "../../components/Box";
+import { Link } from "../../components/Link";
 import { useUser } from "../../hooks/useUser";
 import {
   Avatar,
@@ -27,18 +28,15 @@ export function ProfileSummary() {
             {user?.name}
           </h1>
 
-          <span>
-            <p>
-              GITHUB
-            </p>
-
+          <Link href={user?.html_url} target="_blank">
+            GITHUB
             <img
               src={arrowUpRightFromSquareSolidIcon}
               alt=""
               width={12}
               height={12}
             />
-          </span>
+          </Link>
         </header>
 
         <main>
