@@ -81,7 +81,7 @@ export function PostSummary({ title, posterUsername, comments, html_url, created
               width={18}
               height={18}
             />
-            <p>{comments} comments</p>
+            {comments > 1 ? `${comments} comments` : `${comments} comment`}
           </span>
         </footer>
       </ContentContainer>

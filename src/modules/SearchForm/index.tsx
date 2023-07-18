@@ -7,7 +7,9 @@ import { Container } from "./styles";
 
 export function SearchForm() {
   const form = useFormContext<SearchFormInputs>();
-  const { fetchPosts } = useContext(PostsContext);
+  const { posts, fetchPosts } = useContext(PostsContext);
+
+  const numberOfPosts = posts.length;
 
   async function handleSearchPosts(data: SearchFormInputs) {
     await fetchPosts(data.query);
@@ -22,7 +24,7 @@ export function SearchForm() {
         </h3>
 
         <span>
-          6 posts
+          {numberOfPosts > 1 ? `${numberOfPosts} posts` : `${numberOfPosts} post`}
         </span>
       </header>
 
