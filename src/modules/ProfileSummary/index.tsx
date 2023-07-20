@@ -1,3 +1,4 @@
+import { memo } from "react";
 import arrowUpRightFromSquareSolidIcon from "../../assets/icons/arrow-up-right-from-square-solid.svg";
 import buildingSolidIcon from "../../assets/icons/building-solid.svg";
 import githubIcon from "../../assets/icons/github.svg";
@@ -10,7 +11,7 @@ import {
   ProfileInfoContainer
 } from "./styles";
 
-export function ProfileSummary() {
+function ProfileSummaryComponent() {
   const user = useUser();
 
   return (
@@ -80,3 +81,5 @@ export function ProfileSummary() {
     </Box>
   )
 }
+
+export const ProfileSummary = memo(ProfileSummaryComponent);

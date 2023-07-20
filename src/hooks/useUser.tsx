@@ -1,21 +1,18 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { api } from "../services/axios";
 import { User } from "../types/User";
 
 export function useUser() {
   const [user, setUser] = useState<User | undefined>();
 
-  async function fetchUser() {
-    return await api.get<User>("users/Brenosalv");
-  }
+  const fetchUser = useCallback(async () => {
+    const response = await api.get<User>("users/Brenosalv");
+
+    setUser(response.data);
+  }, []);
 
   useEffect(() => {
-    fetchUser()
-      .then((response) => response.data)
-      .then(setUser)
-      .catch((error) =>
-        console.error(error)
-      );
+    fetchUser().catch((error) => console.error(error));
   }, []);
 
   return user;

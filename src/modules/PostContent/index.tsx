@@ -2,12 +2,12 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Container } from "./styles";
+
 interface PostContentProps {
   postContent: string;
 }
 
 export function PostContent({ postContent }: PostContentProps) {
-
   return (
     <Container>
       <ReactMarkdown

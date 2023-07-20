@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { Controller, useFormContext } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
+import { useContextSelector } from "use-context-selector";
 import { Input } from "../../components/Input";
 import { PostsContext } from "../../contexts/PostsContext";
 import { SearchFormInputs } from "../../types/SearchForm";
@@ -7,7 +7,9 @@ import { Container } from "./styles";
 
 export function SearchForm() {
   const form = useFormContext<SearchFormInputs>();
-  const { posts, fetchPosts } = useContext(PostsContext);
+  const { posts, fetchPosts } = useContextSelector(PostsContext, (context) => (
+    context
+  ));
 
   const numberOfPosts = posts.length;
 
@@ -29,17 +31,9 @@ export function SearchForm() {
       </header>
 
       <main>
-        <Controller
-          control={form.control}
-          name="query"
-          render={({ field: { onChange, value } }) => (
-            <Input
-              type="text"
-              placeholder="Search content"
-              onChange={onChange}
-              value={value}
-            />
-          )}
+        <Input
+          placeholder="Search content"
+          fieldName="query"
         />
       </main>
     </Container>

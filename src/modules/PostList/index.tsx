@@ -1,12 +1,15 @@
-import { useContext } from "react";
 import { useFormContext } from "react-hook-form";
+import { useContextSelector } from "use-context-selector";
 import { LoadingIndicator } from "../../components/LoadingIndicator";
 import { PostsContext } from "../../contexts/PostsContext";
 import { Post } from "./Post";
 import { Container } from "./styles";
 
 export function PostList() {
-  const { posts } = useContext(PostsContext);
+  const posts = useContextSelector(PostsContext, (context) => (
+    context.posts
+  ));
+
   const form = useFormContext();
 
   return (
