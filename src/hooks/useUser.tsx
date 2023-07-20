@@ -13,7 +13,7 @@ export function useUser() {
 
   useEffect(() => {
     fetchUser().catch((error) => console.error(error));
-  }, []);
+  }, [fetchUser]);
 
   return user;
 }

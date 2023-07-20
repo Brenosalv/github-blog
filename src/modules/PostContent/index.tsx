@@ -13,7 +13,7 @@ export function PostContent({ postContent }: PostContentProps) {
       <ReactMarkdown
         children={postContent}
         components={{
-          code({ node, inline, className, children, ...props }) {
+          code({ inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '')
             return !inline && match ? (
               <SyntaxHighlighter
