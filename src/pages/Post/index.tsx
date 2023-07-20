@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { PostContent } from "../../modules/PostContent";
 import { PostSummary } from "../../modules/PostSummary";
@@ -8,6 +9,10 @@ export function Post() {
   const location = useLocation();
 
   const post = location.state as PostType;
+
+  useEffect(() => {
+    document.title = post.title
+  }, [post]);
 
   return (
     <Container>
