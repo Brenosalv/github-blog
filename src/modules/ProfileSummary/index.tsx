@@ -64,7 +64,7 @@ function ProfileSummaryComponent() {
               width={18}
               height={18}
             />
-            <p>{user?.company}</p>
+            <p>{user?.location}</p>
           </div>
 
           <div>
