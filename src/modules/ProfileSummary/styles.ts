@@ -47,5 +47,11 @@ export const ProfileInfoContainer = styled.div`
       align-items: center;
       gap: 8px;
     }
+
+    @media(max-width: 930px) {
+      align-items: start;
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 `

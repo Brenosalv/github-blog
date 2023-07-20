@@ -7,4 +7,8 @@ export const Container = styled.main`
   align-items: center;
   justify-content: center;
   margin: -5.5rem auto;
+
+  @media(max-width: 930px) {
+    margin: -5.5rem 2rem;
+  }
 `

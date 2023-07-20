@@ -32,5 +32,12 @@ export const ContentContainer = styled.div`
       align-items: center;
       color: ${props => props.theme["base-span"]};
     }
+
+    @media(max-width: 930px) {
+      align-items: start;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 16px;
+    }
   }
 `

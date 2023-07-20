@@ -9,4 +9,8 @@ export const Container = styled.div`
   background-color: ${props => props.theme["base-profile"]};
   border-radius: 10px;
   box-shadow: 0px 2px 32px 8px rgba(0, 0, 0, 0.20);
+  
+  @media(max-width: 600px) {
+    flex-direction: column;
+  } 
 `

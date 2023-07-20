@@ -3,7 +3,7 @@ import EffectLeft from "../../assets/images/effect-left.svg";
 import EffectRight from "../../assets/images/effect-right.svg";
 import GithubBlogLogo from "../../assets/images/logo.svg";
 import {
-  HeaderContainer,
+  Container,
   Logo
 } from "./styles";
 
@@ -15,10 +15,10 @@ export function Header() {
   }
 
   return (
-    <HeaderContainer>
+    <Container>
       <img src={EffectLeft} alt="" />
       <Logo src={GithubBlogLogo} alt="Coffee Delivery" onClick={handleLogoClick} />
       <img src={EffectRight} alt="" />
-    </HeaderContainer>
+    </Container>
   )
 }

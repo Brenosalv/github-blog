@@ -45,6 +45,12 @@ export const Container = styled.div`
       -webkit-box-orient: vertical;
     }
   }
+
+  @media(max-width: 300px) {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+  } 
 `
 
 export const Button = styled.button`
