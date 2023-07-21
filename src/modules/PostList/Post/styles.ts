@@ -24,6 +24,17 @@ export const Container = styled.div`
       font-style: normal;
       font-weight: 700;
       margin-right: 16px;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+
+      @media(max-width: 700px) {
+        font-size: 1rem;
+        -webkit-line-clamp: 3;
+      } 
     }
 
     span {
@@ -31,6 +42,10 @@ export const Container = styled.div`
       font-size: 0.875rem;
       white-space: nowrap;
       line-height: 28px;
+
+      @media(max-width: 400px) {
+        display: none;
+      } 
     }
   }
 
@@ -39,7 +54,6 @@ export const Container = styled.div`
       overflow: hidden;
       text-overflow: ellipsis;
       color: ${props => props.theme["base-text"]};
-
       display: -webkit-box;
       -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
@@ -49,7 +63,18 @@ export const Container = styled.div`
   @media(max-width: 300px) {
     margin: 0;
     border: none;
-    border-radius: 0;
+  }
+
+  @media(max-width: 930px) {
+    width: 92.5vw;
+  }
+
+  @media(max-width: 500px) {
+    width: 85vw;
+  } 
+
+  @media(max-width: 400px) {
+    width: 80vw;
   } 
 `
 
