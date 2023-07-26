@@ -6,6 +6,8 @@ This application leverages the GitHub API to fetch issues from a repository and 
 - List and filter all issues in the repository with a short summary of their contents.
 - Create a page to display a complete post (issue) with detailed information.
 
+Deployed on Vercel: https://github-blog-indol-pi.vercel.app/
+
 ## Table of Contents
 
 - [Installation](#installation)
